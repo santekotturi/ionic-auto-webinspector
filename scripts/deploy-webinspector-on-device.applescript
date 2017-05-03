@@ -27,6 +27,9 @@ tell application "Safari"
 			log "Looking for device. Will continue looking..."
 			tell application "System Events"
 				click menu item initial_view of menu device_name of menu item device_name of menu "Develop" of menu bar item "Develop" of menu bar 1 of application process "Safari"
+				-- AUTO-REFRESH! remove the next two lines if you dont want this. can tweak delay depending on how fast your system is. 				
+				delay 3
+				tell application "System Events" to keystroke "r" using {command down}
 			end tell
 			set hasClicked to true
 		on error foo
