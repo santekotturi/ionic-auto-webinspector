@@ -49,5 +49,6 @@
       "locator": "ios"
     }
   ],
-  "description": "auto-deploy: An Ionic project"
+  "description": "auto-deploy: An Ionic project",
+  "license": "MIT"
 }
