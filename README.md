@@ -9,11 +9,11 @@ An ionic demo app with two hooks for automatically launching the Safari Web Insp
 
 ### Step 1:
 
-#### Simulator:
+#### If you want to use the Simulator:
 
 You need to change a single variable in the script, what your initial view name is. 
 
-Open `/scripts/deploy-webinspector-on-device.applescript`
+Open `/scripts/deploy-webinspector-on-simulator.applescript`
 
 On line 9 you'll see:
 
@@ -29,7 +29,7 @@ If yours doesnt say  `"Home"`, change it line 9 to whatever yours is.
 
 If you don't want to run on a device, skip to Step 2. 
 
-#### Device:
+#### If you want to use your iOS device:
 
 You have to change two variables in the script, your device name and the initial view name.
 
@@ -40,6 +40,8 @@ For your device name, on your iPhone. Settings > General > About > Name.
 OR (with your phone plugged in ), the name appears in Safari menu > Develop. 
 
 ![Screenshot 2](/readme_imgs/screenshot2.png?raw=true "Find Device Name")
+
+Open `/scripts/deploy-webinspector-on-device.applescript` and on line 8, plug in your device name into `set device_name to "YOUR_DEVICE_NAME"`
 
 
 ### Step 2:
