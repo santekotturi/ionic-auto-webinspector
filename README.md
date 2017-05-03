@@ -13,15 +13,21 @@ An ionic demo app with two hooks for automatically launching the Safari Web Insp
 
 You need to change a single variable in the script, what your initial view name is. 
 
-On line 9:
+Open `/scripts/deploy-webinspector-on-device.applescript`
+
+On line 9 you'll see:
 
 `set initial_view to "Home"`
 
-Where `initial_view` should be the initial page your app bootstraps. For ionic2/3 starters, this is `"Home"`. For all ionic-v1 apps, yours will *always* be `"index.html"`. 
+Where `initial_view` should be the initial page your app bootstraps. For ionic2/3 starter apps, this is `"Home"`. For all ionic-v1 apps, yours will *always* be `"index.html"`. 
 
-If you're not sure what yours is, launch your app in Xcode as you normally would. Then go to Develop > Simulator and you'll see what your initial view name is:
+**If you're not sure what yours is**, launch your app in Xcode as you normally would. Then go to Develop > Simulator and you'll see what your initial view name is:
 
 ![Screenshot 1](/readme_imgs/screenshot1.png?raw=true "How to find your initial view name")
+
+If yours doesnt say  `"Home"`, change it line 9 to whatever yours is. 
+
+If you don't want to run on a device, skip to Step 2. 
 
 #### Device:
 
@@ -35,17 +41,18 @@ OR (with your phone plugged in ), the name appears in Safari menu > Develop.
 
 ![Screenshot 2](/readme_imgs/screenshot2.png?raw=true "Find Device Name")
 
+
 ### Step 2:
-Once you've configured these, make the two applescripts in `/scripts` executable:
+Once you've configured the variables above, make the two applescripts in `/scripts` executable:
 
 `chmod 755 scripts/*.applescript` 
 
 ### Step 3:
 Run your app in the simulator: `ionic emulate ios`
 
-Run your app on your device: `cordova run ios` (at the time of writing, `ionic run ios` was causing errors for me.)
+Run your app on your device: `cordova run ios` (at the time of writing, `ionic run ios` was causing errors for me, not related to this hook, but in general its not working.)
 
-Step 3 because if you head over to `config.xml`, we've got:
+Step 3 works because if you head over to `config.xml`, we've got:
 
 ```
   <platform name="ios">
@@ -67,6 +74,12 @@ Copy the two scripts inside `/scripts` to your project (make a `/scripts` direct
 
 ### Step 2:
 Add the hooks to your `config.xml`.
+```
+  <platform name="ios">
+    <hook type="after_emulate" src="scripts/deploy-webinspector-on-simulator.applescript"/>
+    <hook type="after_run" src="scripts/deploy-webinspector-on-device.applescript"/>
+    ...
+```
 
 Done. 
 
