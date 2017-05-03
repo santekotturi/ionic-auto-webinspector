@@ -81,4 +81,4 @@ This is obviously a pretty big hack but once you've got it setup, it does work c
 
 0.0.0 - Basics are working
 
-0.0.1 - Added auto-refresh. Removed the "final" click :)
+0.1.0 - Added auto-refresh. Removed the "final" click :)
