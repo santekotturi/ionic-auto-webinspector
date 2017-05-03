@@ -11,37 +11,37 @@ An ionic demo app with two hooks for automatically launching the Safari Web Insp
 
 #### If you want to use the Simulator:
 
-You need to change a single variable in the script, what your initial view name is. 
-
 Open `/scripts/deploy-webinspector-on-simulator.applescript`
 
 On line 9 you'll see:
 
-`set initial_view to "Home"`
+`set initial_view to "YOUR_INITIAL_VIEW"`
 
-Where `initial_view` should be the initial page your app bootstraps. For ionic2/3 starter apps, this is `"Home"`. For all ionic-v1 apps, yours will *always* be `"index.html"`. 
+Where `initial_view` should be set to the initial page your app bootstraps. For ionic2/3 starter apps, this is `"Home"`. For all ionic-v1 apps, yours will *always* be `"index.html"`. 
 
 **If you're not sure what yours is**, launch your app in Xcode as you normally would. Then go to Develop > Simulator and you'll see what your initial view name is:
 
 ![Screenshot 1](/readme_imgs/screenshot1.png?raw=true "How to find your initial view name")
 
-If yours doesnt say  `"Home"`, change it line 9 to whatever yours is. 
-
-If you don't want to run on a device, skip to Step 2. 
+If yours doesnt say  `"Home"`, change it on line 9 to whatever yours is. 
 
 #### If you want to use your iOS device:
 
 You have to change two variables in the script, your device name and the initial view name.
 
-See the section above for how to change your initial view name. 
+See the section above for how to figure out your initial view name. 
 
-For your device name, on your iPhone. Settings > General > About > Name.
+For your device name: 
 
-OR (with your phone plugged in ), the name appears in Safari menu > Develop. 
+Open `/scripts/deploy-webinspector-on-device.applescript` and on line 8, plug in your device_name into `set device_name to "YOUR_DEVICE_NAME"`. Then, on line 9, set your initial_view name: `set initial_view to "YOUR_INITIAL_VIEW"`
+
+If you're not sure what your device name is: 
+
+On your iPhone. Settings > General > About > Name. OR (with your phone plugged in ), the name appears in Safari menu > Develop. 
 
 ![Screenshot 2](/readme_imgs/screenshot2.png?raw=true "Find Device Name")
 
-Open `/scripts/deploy-webinspector-on-device.applescript` and on line 8, plug in your device name into `set device_name to "YOUR_DEVICE_NAME"`
+
 
 
 ### Step 2:
