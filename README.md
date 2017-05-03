@@ -5,6 +5,8 @@
 
 A set of two Applescripts and two hooks for automatically launching the Safari Web Inspector after you run your app in the simulator or on your iOS device. The hooks refresh your app once the Inspector is launched so you get your bootup logs. Just install the hooks, change a couple variables for your setup and run `ionic emulate ios` or `ionic run ios` and let the hook work for you. 
 
+This repo contains the hooks (in `config.xml`) & their scripts (in `/scripts`). Included in an ionic app to demo it working.
+
 ## How to use it:
 
 ### Step 1:
