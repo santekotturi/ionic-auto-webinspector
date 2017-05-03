@@ -2,22 +2,13 @@
 
 --AppleScript to automatically compile Cordova and open the Safari debugger
 
-set maxWait to 1000                 -- you can decrease this if you want. if you have a long build process you might need to increase this. 
+set maxWait to 1000                 	-- you can decrease this if you want. if you have a long build process you might need to increase this. 
 set hasClicked to false
 set x to 0
 set device_name to "Simulator"
-set initial_view to "Home"			-- see README for instructions. It's whatever your initial state is. Or index.html for ionic v1 apps. 
+set initial_view to "Home"				-- see README for instructions. It's whatever your initial state is. Or index.html for ionic v1 apps. 
 
 log "Starting auto-deploy webinspector to iOS Simulator"
-
---delay fix for yosemite
--- on delay duration
--- 	set endTime to (current date) + duration
--- 	repeat while (current date) is less than endTime
--- 		log "in delay loop"
--- 		tell AppleScript to delay duration
--- 	end repeat
--- end delay
 
 --in case the app is already open, go back to the home screen. if you dont, it could launch the inspector on the older running version of your app. 
 tell application "Simulator"
