@@ -75,3 +75,10 @@ Done.
 Some of you might be wondering why this way and why not inside `/hooks/after_emulate`. Those scripts get run for both ios and android, obviously this wont work for Android because you have to go to `chrome://inspect` and then click a link on a webpage - not something applescript can do. perhaps theres a way to do this with a webscraper... In normal bash and js scripts, you can access the CORDOVA variables passed and figure out if android or ios is being run but I couldnt figure out how to do that in Applescript. If you can find a way, please submit a PR! 
 
 This is obviously a pretty big hack but once you've got it setup, it does work consistently. 
+
+
+# Changelog
+
+0.0.0 - Basics are working
+
+0.0.1 - Added auto-refresh. Removed the "final" click :)
